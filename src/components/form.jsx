@@ -17,7 +17,7 @@ const Form = () => {
     setPhone("")
     setAddress("")
   }
-  return <section className="flex flex-col gap-1 justify-center items-center w-full max-w-[360px]  " >
+  return <section className="flex flex-col gap-1 justify-center items-center w-full max-w-maxi  " >
     <h3 className="self-start" >Book Appointment:</h3>
     <fieldset className="rounded-lg border-main-gray h-15 pl-3 border-2" >
       <legend className="text-main-black ml-2 font-heading font-semibold " >Name*</legend>
@@ -47,7 +47,7 @@ const Form = () => {
         <input value={address} onChange={e => { setAddress(e.target.value) }} type="text" id="address" className="w-full focus:outline-0 font-semibold focus:text-main-black placeholder-main-gray placeholder:font-heading placeholder:font-semibold " required placeholder="Enter your adddress" />
       </label>
     </fieldset>
-    <div className="flex justify-around w-full max-w-[360px] min-w-[300px] my-2 " >
+    <div className="flex justify-around w-full max-w-maxi min-w-[300px] my-2 " >
       <button className="active:bg-main-gray active:text-white active:border-main-black hover:cursor-pointer border-2 rounded-full border-main-green text-main-green p-3 font-semibold "  >book</button>
       <button onClick={clear} className="active:bg-main-gray active:text-white active:border-main-black hover:cursor-pointer border-2 rounded-full border-main-green text-main-green p-3 font-semibold "  >clear</button>
     </div>

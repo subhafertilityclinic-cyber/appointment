@@ -5,6 +5,7 @@
 @theme{
   --font-heading: "Inter";
   --font-logo: "Edu NSW ACT Cursive";
+  --spacing-maxi: 340px;
   --color-main-green: #044343;
   --color-main-gray: #BDC3C6; 
   --color-main-black: #263238; 
