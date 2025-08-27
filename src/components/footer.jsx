@@ -1,8 +1,9 @@
+import { NavLink } from 'react-router';
 import Wave from 'react-wavify'
 
 const Footer = () => {
-  return <footer className="relative flex flex-col justify-center items-center h-30 " >
-    <Wave fill='#044343' className='absolute -z-10 inset-x-0 bottom-0 h-30'
+  return <footer className="relative h-50 pt-15 " >
+    <Wave fill='#044343' className='absolute -z-10 inset-x-0 bottom-0 h-50'
       paused={false}
       style={{ display: 'flex' }}
       options={{
@@ -11,10 +12,46 @@ const Footer = () => {
         points: 3
       }}
     />
-    <p className='font-heading font-semibold text-main-gray text-xl ' >contact us:</p>
-    <div className='flex gap-2'>
-      <a href="https://facebook.com/sumitpdl" target='_blank' rel="noopener noreferrer" ><img className='h-6 w-6' src="/facebook.svg" alt="" /></a>
-      <a href="https://instagram.com/goku_chann_" target='_blank' rel="noopener noreferrer"><img className='h-6 w-6' src="/instagram.svg" alt="" /></a>
+    <div className='flex justify-center gap-6 items-start h-30 ' >
+      <div className='flex flex-col justify-center items-center gap-2'>
+        <p className='font-heading font-semibold text-main-gray text-xl ' >Contact us:</p>
+        <div className='flex gap-2 flex-col ' >
+          <a href="mailto:subhafertilityclinic@gmail.com" target='_blank' className='font-heading text-main-gray font-semibold ' >Mail</a>
+          <p className='font-heading font-semibold text-main-gray' >9829234584</p>
+        </div>
+      </div>
+      <div className='flex flex-col justify-center items-center gap-2' >
+        <p className='font-heading font-semibold text-main-gray text-xl ' >Quick links:</p>
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive
+              ? "font-heading font-bold text-white"
+              : "font-heading font-semibold text-main-gray"
+          }
+        >
+          Home
+        </NavLink>
+        <NavLink
+          to="/about"
+          className={({ isActive }) =>
+            isActive
+              ? "font-heading font-bold text-white"
+              : "font-heading font-semibold text-main-gray"
+          }
+        >
+          About
+        </NavLink>
+
+      </div>
+      <div className='flex flex-col justify-center items-center gap-2'>
+        <p className='font-heading font-semibold text-main-gray text-xl ' >Social:</p>
+        <div className='flex gap-2' >
+          <a href="https://facebook.com/sumitpdl" target='_blank' rel="noopener noreferrer" ><img className='h-6 w-6' src="/facebook.svg" alt="" /></a>
+          <a href="https://instagram.com/goku_chann_" target='_blank' rel="noopener noreferrer"><img className='h-6 w-6' src="/instagram.svg" alt="" /></a>
+        </div>
+      </div>
+
     </div>
   </footer>
 }
