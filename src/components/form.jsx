@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -7,7 +7,7 @@ const Form = () => {
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
   const [datee, setDate] = useState(new Date());
-  console.log("Name: " + name + " Address: " + address + " Phone: " + phone + " Date: " + datee)
+  const [valid, setValid] = useState(true);
   function onChange(datee) {
     setDate(datee);
   }
@@ -17,8 +17,21 @@ const Form = () => {
     setPhone("")
     setAddress("")
   }
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      console.log(phone.length)
+      const phonePattern = /^(98|97)\d{8}$/;
+      (phonePattern.test(phone) | phone.length == 0) ? setValid(true) : setValid(false);
+    }, 500);
+    return () => clearTimeout(handler);
+  }, [phone])
+
+  useEffect(() => {
+    console.log(valid);
+  }, [valid])
+
   return <section className="flex flex-col gap-1 justify-center items-center w-full max-w-maxi  " >
-    <h3 className="self-start" >Book Appointment:</h3>
+    <h3 className="self-start font-heading font-bold text-lg text-main-black " >Book Appointment:</h3>
     <fieldset className="rounded-lg border-main-gray h-15 pl-3 border-2" >
       <legend className="text-main-black ml-2 font-heading font-semibold " >Name*</legend>
       <label htmlFor="name" className="text-main-gray flex items-center gap-1.5" >
@@ -33,7 +46,7 @@ const Form = () => {
         <DatePicker selected={datee} id="date" onChange={onChange} className="focus:outline-0 focus:text-main-black font-semibold w-full " />
       </label>
     </fieldset>
-    <fieldset className="rounded-lg border-main-gray h-15 pl-3 border-2" >
+    <fieldset className={valid ? 'border-main-gray rounded-lg h-15 pl-2 border-2' : 'border-red-500 rounded-lg h-15 pl-2 border-2'}>
       <legend className="text-main-black ml-2 font-heading font-semibold " >Phone*</legend>
       <label htmlFor="phone" className="text-main-gray flex items-center gap-1.5" >
         <img src="/phone.svg" className="h-4 w-4" alt="person icon" /> |
@@ -51,7 +64,7 @@ const Form = () => {
       <button className="active:bg-main-gray active:text-white active:border-main-black hover:cursor-pointer border-2 rounded-full border-main-green text-main-green p-3 font-semibold "  >book</button>
       <button onClick={clear} className="active:bg-main-gray active:text-white active:border-main-black hover:cursor-pointer border-2 rounded-full border-main-green text-main-green p-3 font-semibold "  >clear</button>
     </div>
-  </section>
+  </section >
 }
 export default Form;
 
