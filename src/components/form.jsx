@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import emailjs from "@emailjs/react-native"
 
 const Form = () => {
   const [name, setName] = useState("");
@@ -8,6 +9,33 @@ const Form = () => {
   const [address, setAddress] = useState("");
   const [datee, setDate] = useState(new Date());
   const [valid, setValid] = useState(true);
+
+  let templateParams = {
+    name: name,
+    date: datee,
+    phone: phone,
+    address: address
+  }
+
+  function mail() {
+    const serviceid = import.meta.env.VITE_SERVICE_ID
+    const templateid = import.meta.env.VITE_TEMPLATE_ID
+    const publickey = import.meta.env.VITE_PUBLIC_KEY
+    console.log(serviceid)
+    emailjs
+      .send(serviceid, templateid, templateParams, {
+        publicKey: publickey,
+      })
+      .then(
+        () => {
+          alert("Appointment request send");
+        },
+        (err) => {
+          alert('FAILED...', err);
+        },
+      );
+    clear()
+  }
   function onChange(datee) {
     setDate(datee);
   }
@@ -19,16 +47,11 @@ const Form = () => {
   }
   useEffect(() => {
     const handler = setTimeout(() => {
-      console.log(phone.length)
       const phonePattern = /^(98|97)\d{8}$/;
       (phonePattern.test(phone) | phone.length == 0) ? setValid(true) : setValid(false);
     }, 500);
     return () => clearTimeout(handler);
   }, [phone])
-
-  useEffect(() => {
-    console.log(valid);
-  }, [valid])
 
   return <section className="flex flex-col gap-1 justify-center items-center w-full max-w-maxi  " >
     <h3 className="self-start font-heading font-bold text-lg text-main-black " >Book Appointment:</h3>
@@ -61,7 +84,7 @@ const Form = () => {
       </label>
     </fieldset>
     <div className="flex justify-around w-full max-w-maxi min-w-[300px] my-2 " >
-      <button className="active:bg-main-gray active:text-white active:border-main-black hover:cursor-pointer border-2 rounded-full border-main-green text-main-green p-3 font-semibold "  >book</button>
+      <button onClick={() => { (valid & (phone.length != 0)) ? mail() : alert("Check your phone number") }} className="active:bg-main-gray active:text-white active:border-main-black hover:cursor-pointer border-2 rounded-full border-main-green text-main-green p-3 font-semibold "  >book</button>
       <button onClick={clear} className="active:bg-main-gray active:text-white active:border-main-black hover:cursor-pointer border-2 rounded-full border-main-green text-main-green p-3 font-semibold "  >clear</button>
     </div>
   </section >
