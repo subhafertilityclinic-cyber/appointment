@@ -21,7 +21,7 @@ const Form = () => {
     const serviceid = import.meta.env.VITE_SERVICE_ID
     const templateid = import.meta.env.VITE_TEMPLATE_ID
     const publickey = import.meta.env.VITE_PUBLIC_KEY
-    console.log(serviceid)
+
     emailjs
       .send(serviceid, templateid, templateParams, {
         publicKey: publickey,
@@ -40,7 +40,6 @@ const Form = () => {
     setDate(datee);
   }
   function clear() {
-    console.log("pressed")
     setName("")
     setPhone("")
     setAddress("")
