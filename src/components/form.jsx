@@ -68,7 +68,7 @@ const Form = () => {
       <legend className="text-main-black ml-2 font-heading font-semibold " >Appointment Date*</legend>
       <label htmlFor="date" className="text-main-gray flex items-center gap-1.5" >
         <img src="/date.svg" className="h-4 w-4" alt="person icon" /> |
-        <DatePicker selected={datee} id="date" minDate={today} filterDate={ (date) => getDay(date) !== 6} onChange={onChange} className="focus:outline-0 focus:text-main-black font-semibold w-full " />
+        <DatePicker selected={datee} id="date" minDate={today} showTimeSelect  dateFormat="MMMM d, yyyy h:mm aa" filterDate={ (date) => getDay(date) !== 6} onChange={onChange} className="focus:outline-0 focus:text-main-black font-semibold w-full " />
       </label>
     </fieldset>
     <fieldset className={valid ? 'border-main-gray rounded-lg h-15 pl-2 border-2' : 'border-red-500 rounded-lg h-15 pl-2 border-2'}>
