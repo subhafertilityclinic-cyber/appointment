@@ -5,8 +5,8 @@ import React from 'react';
 
 const svgMarker = L.icon({
   iconUrl: "/location.svg",
-  iconSize: [38, 38],      // adjust to your SVG size
-  iconAnchor: [16, 32],    // bottom-center of icon
+  iconSize: [50, 50],      // adjust to your SVG size
+  iconAnchor: [25, 50],    // bottom-center of icon
   popupAnchor: [0, -32],
 });
 const Map = React.memo(() => {
@@ -18,7 +18,7 @@ const Map = React.memo(() => {
       center={[27.679466469087807, 84.4318247396386]}
       zoom={17}
       scrollWheelZoom={false}
-      className="w-full max-w-maxi min-w-[300px] h-[200px] border-2 border-main-gray rounded-2xl "
+      className="w-full max-w-maxi min-w-[300px] h-[200px] border-2 border-main-accent rounded-2xl "
     >
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
