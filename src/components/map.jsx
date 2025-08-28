@@ -25,9 +25,28 @@ const Map = React.memo(() => {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       <Marker position={[27.679466469087807, 84.4318247396386]} icon={svgMarker} >
-        <Popup className="font-bold text-main-black font-heading" >
-          Subha Fertility <br /> clinic
-        </Popup>
+        <Popup>
+  <div>
+    <strong>Subha Fertility Clinic</strong><br />
+    address, Bharatpur, Nepal<br />
+    Mon-Sat: 9 AM - 5 PM<br />
+    {/* <button className='text-blue-400' onClick={()=>{
+  navigator.geolocation.getCurrentPosition((position) =>{
+    console.log(position.coords)
+    const lat = position.coords.latitude;
+    const lng = position.coords.longitude;
+    const dir = `https://www.google.com/maps/dir/?api=1&origin=${lat},${lng}&destination=27.679466469087807,84.4318247396386`;
+    window.open(dir,"_blank");
+  }, (error) => {
+    alert("Cannot get your location");
+  });
+}}>
+  Get Direction
+</button> */}
+ <a href="https://maps.google.com/?q=27.679,84.431" target="_blank">Get Directions</a>
+  </div>
+</Popup>
+
       </Marker>
     </MapContainer>
   </section>
