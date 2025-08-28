@@ -5,8 +5,8 @@ import React from 'react';
 
 const svgMarker = L.icon({
   iconUrl: "/location.svg",
-  iconSize: [38, 38],      // adjust to your SVG size
-  iconAnchor: [16, 32],    // bottom-center of icon
+  iconSize: [50, 50],      // adjust to your SVG size
+  iconAnchor: [25, 50],    // bottom-center of icon
   popupAnchor: [0, -32],
 });
 const Map = React.memo(() => {
