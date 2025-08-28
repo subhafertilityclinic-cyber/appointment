@@ -6,7 +6,10 @@
   --font-heading: "Inter";
   --font-logo: "Edu NSW ACT Cursive";
   --spacing-maxi: 340px;
-  --color-main-green: #044343;
+  --color-main-primary: #FF90BB;
+  --color-main-secondary: #FFC1DA;
+  --color-main-background: #F8F8E1;
+  --color-main-accent: #8ACCD5;
   --color-main-gray: #BDC3C6; 
   --color-main-black: #263238; 
 }
