@@ -132,8 +132,8 @@ const Form = () => {
         <input value={address} onChange={e => { setAddress(e.target.value) }} type="text" id="address" className="w-full focus:outline-0 md:text-lg font-semibold focus:text-main-black placeholder-main-accent placeholder:font-heading placeholder:font-semibold " required placeholder="Enter your adddress" />
       </label>
     </fieldset>
-    <button onClick={validate} className="h-10 mt-3  md:col-span-5  md:col-start-2 md:font-bold md:text-lg  active:bg-main-accent active:text-white active:border-main-black hover:cursor-pointer rounded-2xl bg-main-accent text-main-background  font-semibold "  >book</button>
-    <button onClick={clear} className="h-10 mt-3 md:col-span-5 md:col-start-8  md:font-bold md:text-lg  active:bg-main-accent active:text-white active:border-main-black hover:cursor-pointer rounded-2xl bg-main-background border-main-accent text-main-accent  font-semibold "  >clear</button>
+    <button onClick={validate} className="h-10 mt-3  md:col-span-5  md:col-start-2 md:font-bold md:text-lg  active:bg-main-background active:text-main-accent  hover:cursor-pointer rounded-2xl bg-main-accent text-main-background  font-semibold "  >book</button>
+    <button onClick={clear} className="h-10 mt-3 md:col-span-5 md:col-start-8  md:font-bold md:text-lg  active:bg-main-accent active:text-white hover:cursor-pointer rounded-2xl bg-main-background border-main-accent text-main-accent  font-semibold "  >clear</button>
   </section >
 }
 export default Form;
