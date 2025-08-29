@@ -1,5 +1,5 @@
 const Nav = () => {
-  return <nav className="border-y-5 rounded-2xl sm:rounded-3xl md:rounded-4xl border-main-accent justify-center  py-7 flex flex-col w-full pl-2 sm:pl-30 md:flex-row md:justify-around md:items-center
+  return <nav className="justify-center  py-7 flex flex-col w-full pl-2 sm:pl-30 md:flex-row md:justify-around md:items-center
     " >
     <img src="/doc.jpeg" className="w-32 h-32 rounded-full object-cover border-2 border-main-accent md:w-70 md:h-72 md:rounded-3xl " alt="fertility expert" />
     <div>
