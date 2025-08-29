@@ -3,12 +3,15 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import emailjs from "@emailjs/react-native"
 import Poopers from "./poopers";
+import { getDay} from "date-fns"
+
+const today = new Date()
 
 const Form = () => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
-  const [datee, setDate] = useState(new Date());
+  const [datee, setDate] = useState(today);
   const [isEmptyName, setIsEmptyName] = useState(false);
   const [isEmptyAddress, setIsEmptyAddress] = useState(false);
   const [valid, setValid] = useState(true);
@@ -115,7 +118,7 @@ const Form = () => {
       <legend className="text-main-black ml-2 font-heading font-semibold " >Appointment Date*</legend>
       <label htmlFor="date" className="text-main-accent flex items-center gap-1.5" >
         <img src="/date.svg" className="h-4 w-4" alt="person icon" /> |
-        <DatePicker selected={datee} id="date" onChange={onChange} className="focus:outline-0 focus:text-main-black font-semibold w-full " />
+        <DatePicker selected={datee} id="date" minDate={today} showTimeSelect  dateFormat="MMMM d, yyyy h:mm aa" filterDate={ (date) => getDay(date) !== 6} onChange={onChange} className="focus:outline-0 focus:text-main-black font-semibold w-full " />
       </label>
     </fieldset>
     <fieldset className={` rounded-lg h-15 pl-2 border-2 w-full md:col-span-5 md:col-start-2 ${valid ? 'border-main-accent' : 'border-red-500'}`}>
@@ -139,4 +142,5 @@ const Form = () => {
   </section >
 }
 export default Form;
+
 
