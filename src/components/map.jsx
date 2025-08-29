@@ -10,8 +10,8 @@ const svgMarker = L.icon({
   popupAnchor: [0, -32],
 });
 const Map = React.memo(() => {
-  return (<section className=" w-maxi md:w-full md:px-10 flex flex-col items-center mt-2 " >
-    <strong className="font-bold font-heading text-main-black text-2xl  " >
+  return (<section className=" w-maxi mt-4 md:w-full md:px-10 flex flex-col items-center " >
+    <strong className="font-bold font-heading text-main-black text-2xl md:text-3xl  " >
       visit us at:
     </strong>
     <MapContainer
