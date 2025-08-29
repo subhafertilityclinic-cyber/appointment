@@ -12,7 +12,7 @@ const Footer = () => {
         points: 3
       }}
     />
-    <div className='flex justify-center gap-6 items-start h-30 ' >
+    <div className='flex justify-center gap-6 items-start h-30  md:justify-around ' >
       <div className='flex flex-col justify-center items-center gap-2'>
         <p className='font-heading font-semibold text-main-background text-xl ' >Contact us:</p>
         <div className='flex gap-2 flex-col ' >
