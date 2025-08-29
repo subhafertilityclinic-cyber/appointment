@@ -1,5 +1,5 @@
 const Experts = () => {
-  return <section className="flex flex-col justify-center items-center w-full max-w-maxi " >
+  return <section className="flex flex-col md:p-4 justify-center items-center w-maxi md:w-full " >
     <article className="px-3" >
       <h3 className="self-start font-heading font-bold text-lg text-main-black " >About:</h3>
       <p className=" tracking-tight text-justify font-heading text-main-black " >Dr. Subha Shrestha is a Nepal Medical Council registered Obstetrician & Gynecologist practicing since one decade  in Nepal. She is certified and registered IVF and Fertility Specialist with advanced training in reproductive health and infertility management currently practicing in Bharatpur, Chitwan since beginning. She completed her medical education from Kathmandu University. She is awarded with NESOG Logic Gold Medal 2013 for her excellence. She is a registered Fertility specialist of Nepal with her certified a year fellowship from renowned Indira IVF of India. </p>

@@ -15,7 +15,4 @@
 }
 
 @layer components{
-  fieldset{
-    @apply w-full max-w-[360px] min-w-[300px];
-  }
 }
