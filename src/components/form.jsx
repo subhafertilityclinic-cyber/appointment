@@ -111,7 +111,7 @@ const Form = () => {
         <input value={name} onChange={e => setName(e.target.value)} type="text" id="name" className=" w-full focus:outline-0 font-semibold focus:text-main-black placeholder-main-accent placeholder:font-heading placeholder:font-semibold " required placeholder="Enter your name" />
       </label>
     </fieldset>
-    <fieldset className="rounded-lg border-main-accent  h-15 pl-3 border-2  md:col-start-8 md:col-span-5 " >
+    <fieldset className="rounded-lg border-main-accent h-15 pl-3 border-2  md:col-start-8 md:col-span-5 " >
       <legend className="text-main-black ml-2 font-heading font-semibold " >Appointment Date*</legend>
       <label htmlFor="date" className="text-main-accent flex items-center gap-1.5" >
         <img src="/date.svg" className="h-4 w-4" alt="person icon" /> |
