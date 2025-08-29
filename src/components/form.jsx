@@ -2,13 +2,37 @@ import { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import emailjs from "@emailjs/react-native"
+import Poopers from "./poopers";
 
 const Form = () => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
   const [datee, setDate] = useState(new Date());
+  const [isEmptyName, setIsEmptyName] = useState(false);
+  const [isEmptyAddress, setIsEmptyAddress] = useState(false);
   const [valid, setValid] = useState(true);
+  const [message, setMessage] = useState("");
+  const [messageVisible, setMessageVisible] = useState(false);
+  const [pooperRun, setPooperRun] = useState(false);
+  const validate = () => {
+    let passed = true;
+    if (name.length == 0) {
+      setIsEmptyName(true)
+      passed = false;
+    }
+    if (phone.length == 0) {
+      setValid(false);
+      passed = false;
+    }
+    if (address.length == 0) {
+      setIsEmptyAddress(true);
+      passed = false;
+    }
+    if (passed) {
+      mail()
+    } else setMessage("Please fill up the form correctly")
+  }
 
   let templateParams = {
     name: name,
@@ -28,21 +52,26 @@ const Form = () => {
       })
       .then(
         () => {
-          alert("Appointment request send");
+          setMessage("Appointment request send")
+          setPooperRun(true);
+          clear()
         },
         (err) => {
-          alert('FAILED...', err);
+          setMessage('FAILED...', err);
+          clear()
         },
       );
-    clear()
   }
   function onChange(datee) {
     setDate(datee);
   }
   function clear() {
     setName("")
+    setIsEmptyName(false)
     setPhone("")
+    setValid(true)
     setAddress("")
+    setIsEmptyAddress(false)
   }
   useEffect(() => {
     const handler = setTimeout(() => {
@@ -51,10 +80,30 @@ const Form = () => {
     }, 500);
     return () => clearTimeout(handler);
   }, [phone])
+  useEffect(() => {
+    if (name.length != 0) setIsEmptyName(false)
+    if (address.length != 0) setIsEmptyAddress(false)
+  }, [name, address])
+  useEffect(() => {
+    if (message.length == 0) return
+    setMessageVisible(true)
+    const handler = setTimeout(() => {
+      setMessageVisible(false)
+    }, 2000);
+    return () => {
+      clearTimeout(handler);
+    }
+  }, [message])
 
   return <section className="flex flex-col gap-1 justify-center items-center w-full max-w-maxi  " >
     <h3 className="self-start font-heading font-bold text-lg text-main-black " >Book Appointment:</h3>
-    <fieldset className="rounded-lg border-main-accent h-15 pl-3 border-2" >
+    <div className="relative h-2 flex justify-center items-center " >
+      {messageVisible ?
+        <strong>{message}</strong>
+        : null
+      }
+    </div>
+    <fieldset className={`rounded-lg h-15 pl-3 border-2 ${!isEmptyName ? 'border-main-accent' : 'border-red-500'}`} >
       <legend className="text-main-black ml-2 font-heading font-semibold " >Name*</legend>
       <label htmlFor="name" className="text-main-accent flex items-center gap-1.5" >
         <img src="/person.svg" className="h-4 w-4" alt="person icon" /> |
@@ -75,16 +124,17 @@ const Form = () => {
         <input value={phone} onChange={e => setPhone(e.target.value)} type="text" id="phone" className="w-full focus:outline-0 font-semibold focus:text-main-black placeholder-main-accent placeholder:font-heading placeholder:font-semibold " required placeholder="Enter your phone" />
       </label>
     </fieldset>
-    <fieldset className="rounded-lg border-main-accent h-15 pl-3 border-2" >
-      <legend className="text-main-black ml-2 font-heading font-semibold " >Address*</legend>
+    <fieldset className={`rounded-lg h-15 pl-3 border-2 ${!isEmptyAddress ? 'border-main-accent' : 'border-red-500'} `}  >
+      <legend className="text-main-black ml-2 font-heading font-semibold" >Address*</legend>
       <label htmlFor="address" className="text-main-accent flex items-center gap-1.5" >
         <img src="/address.svg" className="h-4 w-4" alt="person icon" /> |
         <input value={address} onChange={e => { setAddress(e.target.value) }} type="text" id="address" className="w-full focus:outline-0 font-semibold focus:text-main-black placeholder-main-accent placeholder:font-heading placeholder:font-semibold " required placeholder="Enter your adddress" />
       </label>
     </fieldset>
     <div className="flex justify-around w-full max-w-maxi min-w-[300px] my-2 " >
-      <button onClick={() => { (valid & (phone.length != 0)) ? mail() : alert("Check your phone number") }} className="active:bg-main-accent active:text-white active:border-main-black hover:cursor-pointer border-2 rounded-full border-main-accent text-main-accent p-3 font-semibold "  >book</button>
+      <button onClick={validate} className="active:bg-main-accent active:text-white active:border-main-black hover:cursor-pointer border-2 rounded-full border-main-accent text-main-accent p-3 font-semibold "  >book</button>
       <button onClick={clear} className="active:bg-main-accent active:text-white active:border-main-black hover:cursor-pointer border-2 rounded-full border-main-accent text-main-accent p-3 font-semibold "  >clear</button>
+      <Poopers setRun={setPooperRun} run={pooperRun} />
     </div>
   </section >
 }
