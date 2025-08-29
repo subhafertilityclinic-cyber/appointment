@@ -15,13 +15,15 @@ const Poopers = ({ setRun, run }) => {
   })
 
   return (
-    <Confetti
-      width={width}
-      height={height}
-      run={run}
-      recycle={false}
-      numberOfPieces={500}
-    />
+    <div className=" fixed pointer-events-none z-20 w-screen h-screen top-0 left-0 " >
+      <Confetti
+        width={width}
+        height={height}
+        run={run}
+        recycle={false}
+        numberOfPieces={500}
+      />
+    </div>
   )
 }
 export default Poopers
