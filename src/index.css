@@ -18,5 +18,11 @@
   body{
     background: #F9FAFB;
   }
+/* in index.css or a global stylesheet */
+.leaflet-pane,
+.leaflet-top,
+.leaflet-bottom {
+  z-index: 0 !important;
+}
 }
 

@@ -98,7 +98,7 @@ const Form = () => {
     }
   }, [message])
 
-  return <section className=" w-full px-6 flex justify-center " >
+  return <section className=" w-full mt-6 px-6 flex justify-center " >
     <div className="grid grid-cols-1 px-2 w-full  md:w-[70vw] md:grid-cols-13  py-6 flex-col items-center bg-white shadow-md rounded-2xl">
       <h3 className=" md:col-span-13  self-start font-heading font-bold text-lg text-main-black md:text-center md:text-3xl " >Book Appointment:</h3>
       <div className=" md:col-span-13 h-4 w-full flex justify-center items-center md:text-2xl md:h-6 " >
@@ -122,7 +122,7 @@ const Form = () => {
           <DatePicker selected={datee} id="date" showTimeSelect filterDate={date => getDay(date) !== 6} dateFormat="MMMM d, yyyy h:mm aa" minDate={today} onChange={onChange} className="focus:outline-0 md:h-17 focus:text-main-black font-semibold md:text-lg w-full " />
         </label>
       </fieldset>
-      <fieldset className={` rounded-lg h-15 pl-2 border-2 mb-7 md:h-17 flex items-center md:col-span-5 md:col-start-2 ${valid ? 'border-main-accent' : 'border-red-500'}`}>
+      <fieldset className={` rounded-lg h-15 pl-2 border-2 md:mb-7 md:h-17 flex items-center md:col-span-5 md:col-start-2 ${valid ? 'border-main-accent' : 'border-red-500'}`}>
         <legend className="text-main-black ml-2 font-heading font-semibold " >Phone*</legend>
         <label htmlFor="phone" className="text-main-accent flex items-center gap-1.5" >
           <img src="/phone.svg" className="size-4 md:size-5" alt="person icon" /> |
