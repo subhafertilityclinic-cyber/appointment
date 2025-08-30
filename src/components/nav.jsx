@@ -6,7 +6,7 @@ const Nav = () => {
       <p className="font-heading text-lg text-main-black tracking-wide md:text-3xl " >Fertility Expert</p>
       <h2 className="font-heading font-bold text-main-accent text-3xl tracking-wider md:text-5xl " >Dr.Subha Shrestha</h2>
     </div>
-    <ul className="font-heading text-main-black text-lg md:text-2xl " >
+    <ul className="font-heading text-main-gray text-lg md:text-2xl " >
       <li>MBBS NMC no:6395</li>
       <li>MD Obstetrics &amp; Gynecology</li>
       <li>ART &amp; IVF Fellowship</li>
