@@ -98,7 +98,7 @@ const Form = () => {
     }
   }, [message])
 
-  return <section className="" >
+  return <section className=" w-full px-6 flex justify-center " >
     <div className="grid grid-cols-1 px-2 w-full  md:w-[70vw] md:grid-cols-13  py-6 flex-col items-center bg-white shadow-md rounded-2xl">
       <h3 className=" md:col-span-13  self-start font-heading font-bold text-lg text-main-black md:text-center md:text-3xl " >Book Appointment:</h3>
       <div className=" md:col-span-13 h-4 w-full flex justify-center items-center md:text-2xl md:h-6 " >
@@ -151,8 +151,8 @@ const Form = () => {
         onClick={clear}
         className="h-10 mt-3 md:col-span-5 md:col-start-8 md:font-bold md:text-lg 
              rounded-2xl border-2  border-main-accent text-main-black font-semibold 
-             active:brightness-90 
-             hover:brightness-95 hover:shadow-md hover:cursor-pointer 
+             active:brightness-70 
+             hover:brightness-105 hover:shadow-md hover:cursor-pointer 
              transition duration-200 ease-in-out"
       >
         Clear
