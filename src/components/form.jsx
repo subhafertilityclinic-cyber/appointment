@@ -3,12 +3,15 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import emailjs from "@emailjs/react-native"
 import Poopers from "./poopers";
+import { getDay } from 'date-fns';
+
+const today = new Date();
 
 const Form = () => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
-  const [datee, setDate] = useState(new Date());
+  const [datee, setDate] = useState(today);
   const [isEmptyName, setIsEmptyName] = useState(false);
   const [isEmptyAddress, setIsEmptyAddress] = useState(false);
   const [valid, setValid] = useState(true);
@@ -115,7 +118,7 @@ const Form = () => {
       <legend className="text-main-black ml-2 font-heading font-semibold " >Appointment Date*</legend>
       <label htmlFor="date" className="text-main-accent flex items-center gap-1.5" >
         <img src="/date.svg" className="size-4 md:size-5" alt="person icon" /> |
-        <DatePicker selected={datee} id="date" onChange={onChange} className="focus:outline-0 focus:text-main-black font-semibold md:text-lg w-full " />
+        <DatePicker selected={datee} id="date" showTimeSelect filterDate={date => getDay(date) !== 6}   dateFormat="MMMM d, yyyy h:mm aa" minDate={today} onChange={onChange} className="focus:outline-0 focus:text-main-black font-semibold md:text-lg w-full " />
       </label>
     </fieldset>
     <fieldset className={` rounded-lg h-15 pl-2 border-2 md:h-17 flex items-center md:col-span-5 md:col-start-2 ${valid ? 'border-main-accent' : 'border-red-500'}`}>
@@ -132,8 +135,28 @@ const Form = () => {
         <input value={address} onChange={e => { setAddress(e.target.value) }} type="text" id="address" className="w-full focus:outline-0 md:text-lg font-semibold focus:text-main-black placeholder-main-accent placeholder:font-heading placeholder:font-semibold " required placeholder="Enter your adddress" />
       </label>
     </fieldset>
-    <button onClick={validate} className="h-10 mt-3  md:col-span-5  md:col-start-2 md:font-bold md:text-lg  active:bg-main-background active:text-main-accent  hover:cursor-pointer rounded-2xl bg-main-accent text-main-background  font-semibold "  >book</button>
-    <button onClick={clear} className="h-10 mt-3 md:col-span-5 md:col-start-8  md:font-bold md:text-lg  active:bg-main-accent active:text-white hover:cursor-pointer rounded-2xl bg-main-background border-main-accent text-main-accent  font-semibold "  >clear</button>
+    <button 
+  onClick={validate} 
+  className="h-10 mt-3 md:col-span-5 md:col-start-2 md:font-bold md:text-lg 
+             rounded-2xl bg-main-accent text-main-background font-semibold 
+             active:brightness-90 
+             hover:brightness-105 hover:shadow-md hover:cursor-pointer 
+             transition duration-200 ease-in-out"
+>
+  book
+</button>
+
+<button 
+  onClick={clear} 
+  className="h-10 mt-3 md:col-span-5 md:col-start-8 md:font-bold md:text-lg 
+             rounded-2xl bg-main-background  border-main-accent text-main-accent font-semibold 
+             active:brightness-90 
+             hover:brightness-95 hover:shadow-md hover:cursor-pointer 
+             transition duration-200 ease-in-out"
+>
+  clear
+</button>
+
   </section >
 }
 export default Form;
