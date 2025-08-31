@@ -99,47 +99,47 @@ const Form = () => {
   }, [message])
 
   return <section className=" w-full mt-6 px-6 flex justify-center " >
-    <div className="grid grid-cols-1 px-2 w-full  md:w-[70vw] md:grid-cols-13  py-6 flex-col items-center bg-white shadow-md rounded-2xl">
-      <h3 className=" md:col-span-13  self-start font-heading font-bold text-lg text-main-black md:text-center md:text-3xl " >Book Appointment:</h3>
-      <div className=" md:col-span-13 h-4 w-full flex justify-center items-center md:text-2xl md:h-6 " >
+    <div className="grid grid-cols-1 px-2 w-full  md:w-[70vw] md:grid-cols-4 md:gap-4 md:px-9 py-6 flex-col items-center bg-white shadow-md rounded-2xl">
+      <h3 className=" md:col-span-4  self-start font-heading font-bold text-lg text-main-black md:text-center md:text-3xl " >Book Appointment:</h3>
+      <div className=" md:col-span4 h-4 w-full flex justify-center items-center md:text-2xl md:h-6 " >
         {messageVisible ?
           <strong className="h-2 md:col-span-2 md:h-6" >{message}</strong>
           : null
         }
         <Poopers setRun={setPooperRun} run={pooperRun} />
       </div>
-      <fieldset className={`rounded-lg h-15 md:h-17 flex items-center pl-3 border-2 md:col-start-2 md:col-span-5 ${!isEmptyName ? 'border-main-accent' : 'border-red-500'}`} >
+      <fieldset className={`rounded-lg h-15 md:h-17 flex items-center pl-3 border-2 md:col-start-1 md:col-span-2 ${!isEmptyName ? 'border-main-gray' : 'border-red-500'}`} >
         <legend className="text-main-black ml-2 font-heading font-semibold " >Name*</legend>
-        <label htmlFor="name" className="text-main-accent w-full flex items-center gap-1.5" >
+        <label htmlFor="name" className="text-main-gray w-full flex items-center gap-1.5" >
           <img src="/person.svg" className="size-4 md:size-5 " alt="person icon" /> |
-          <input value={name} onChange={e => setName(e.target.value)} type="text" id="name" className=" w-full md:h-17 focus:outline-0 font-semibold md:text-lg focus:text-main-black placeholder-main-accent placeholder:font-heading placeholder:font-semibold " required placeholder="Enter your name" />
+          <input value={name} onChange={e => setName(e.target.value)} type="text" id="name" className=" w-full md:h-17 focus:outline-0 md:text-lg focus:text-main-black placeholder-main-gray text-lg " required placeholder="Enter your name" />
         </label>
       </fieldset>
-      <fieldset className="rounded-lg border-main-accent  h-15 md:h-17 flex items-center pl-3 border-2  md:col-start-8 md:col-span-5 " >
+      <fieldset className="rounded-lg border-main-gray  h-15 md:h-17 flex items-center pl-3 border-2  md:col-start-3 md:col-span-2 " >
         <legend className="text-main-black ml-2 font-heading font-semibold " >Appointment Date*</legend>
-        <label htmlFor="date" className="text-main-accent flex items-center gap-1.5" >
+        <label htmlFor="date" className="text-main-gray flex items-center gap-1.5" >
           <img src="/date.svg" className="size-4 md:size-5" alt="person icon" /> |
-          <DatePicker selected={datee} id="date" showTimeSelect filterDate={date => getDay(date) !== 6} dateFormat="MMMM d, yyyy h:mm aa" minDate={today} onChange={onChange} className="focus:outline-0 md:h-17 focus:text-main-black font-semibold md:text-lg w-full " />
+          <DatePicker selected={datee} id="date" showTimeSelect filterDate={date => getDay(date) !== 6} dateFormat="MMMM d, yyyy h:mm aa" minDate={today} onChange={onChange} className="focus:outline-0 md:h-17 focus:text-main-black text-lg w-full " />
         </label>
       </fieldset>
-      <fieldset className={` rounded-lg h-15 pl-2 border-2 md:mb-7 md:h-17 flex items-center md:col-span-5 md:col-start-2 ${valid ? 'border-main-accent' : 'border-red-500'}`}>
+      <fieldset className={` rounded-lg h-15 pl-2 border-2 md:mb-1 md:h-17 flex items-center md:col-span-2 md:col-start-1 ${valid ? 'border-main-gray' : 'border-red-500'}`}>
         <legend className="text-main-black ml-2 font-heading font-semibold " >Phone*</legend>
-        <label htmlFor="phone" className="text-main-accent flex items-center gap-1.5" >
+        <label htmlFor="phone" className="text-main-gray flex items-center gap-1.5" >
           <img src="/phone.svg" className="size-4 md:size-5" alt="person icon" /> |
-          <input value={phone} onChange={e => setPhone(e.target.value)} type="text" id="phone" className="w-full focus:outline-0 md:text-lg font-semibold md:h-17 focus:text-main-black placeholder-main-accent placeholder:font-heading placeholder:font-semibold " required placeholder="Enter your phone" />
+          <input value={phone} onChange={e => setPhone(e.target.value)} type="text" id="phone" className="w-full focus:outline-0 text-lg md:h-17 focus:text-main-black placeholder-main-gray " required placeholder="Enter your phone" />
         </label>
       </fieldset>
-      <fieldset className={`rounded-lg h-15 pl-3 border-2 md:h-17 flex items-center mb-7  md:col-span-5 md:col-start-8 ${!isEmptyAddress ? 'border-main-accent' : 'border-red-500'} `}  >
+      <fieldset className={`rounded-lg h-15 pl-3 border-2 md:h-17 flex items-center md:mb-1  md:col-span-2 md:col-start-3 ${!isEmptyAddress ? 'border-main-gray' : 'border-red-500'} `}  >
         <legend className="text-main-black ml-2 font-heading font-semibold" >Address*</legend>
-        <label htmlFor="address" className="text-main-accent flex items-center gap-1.5" >
+        <label htmlFor="address" className="text-main-gray flex items-center gap-1.5" >
           <img src="/address.svg" className="size-4 md:size-5" alt="person icon" /> |
-          <input value={address} onChange={e => { setAddress(e.target.value) }} type="text" id="address" className="w-full focus:outline-0 md:text-lg md:h-17 font-semibold focus:text-main-black placeholder-main-accent placeholder:font-heading placeholder:font-semibold " required placeholder="Enter your adddress" />
+          <input value={address} onChange={e => { setAddress(e.target.value) }} type="text" id="address" className="w-full focus:outline-0 text-lg md:h-17 focus:text-main-black placeholder-main-gray " required placeholder="Enter your adddress" />
         </label>
       </fieldset>
       <button
         onClick={validate}
-        className="h-10 mt-3 md:col-span-5 md:col-start-2 md:font-bold md:text-lg 
-             rounded-2xl bg-main-accent text-main-background font-semibold 
+        className="h-10 mt-3 md:col-span-2 md:col-start-1 md:font-bold md:text-lg 
+             rounded-2xl bg-main-accent  text-main-background font-semibold 
              active:brightness-90 
              hover:brightness-105 hover:shadow-md hover:cursor-pointer 
              transition duration-200 ease-in-out"
@@ -149,7 +149,7 @@ const Form = () => {
 
       <button
         onClick={clear}
-        className="h-10 mt-3 md:col-span-5 md:col-start-8 md:font-bold md:text-lg 
+        className="h-10 mt-3 md:col-span-2 md:col-start-3 md:font-bold md:text-lg 
              rounded-2xl border-2  border-main-accent text-main-black font-semibold 
              active:brightness-70 
              hover:brightness-105 hover:shadow-md hover:cursor-pointer 
