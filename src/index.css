@@ -14,7 +14,6 @@
   --color-main-black: #263238; 
 }
 
-@layer components{
   body{
     background: #F9FAFB;
   }
@@ -24,5 +23,18 @@
 .leaflet-bottom {
   z-index: 0 !important;
 }
+
+.heart {
+  animation: heartbeat 1.2s infinite;
+  transform-origin: center;
+}
+
+@keyframes heartbeat {
+  0%, 40%, 70%, 100% {
+    transform: scale(1);
+  }
+  30%, 60%, 80%   {
+    transform: scale(1.3);
+  }
 }
 
