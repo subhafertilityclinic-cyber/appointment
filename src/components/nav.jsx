@@ -1,5 +1,5 @@
 const Nav = () => {
-  return <nav className="bg-[url(/navBG.jpg)] h-40 md:h-fit flex justify-center items-center  bg-cover md:bg-cover md:bg-bottom lg:bg-center bg-no-repeat w-full
+  return <nav className="bg-[url(/navBG.jpg)] h-40 md:h-fit flex justify-center items-center bg-center bg-cover md:bg-bottom lg:bg-center bg-no-repeat w-full
     " >
     <div className=" hidden md:flex w-[70vw] gap-4 mt-4 flex-col  " >
       <div className="bg-main-primary w-fit p-2 rounded-2xl " >
