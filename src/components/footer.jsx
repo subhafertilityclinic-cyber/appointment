@@ -3,7 +3,7 @@ import Wave from 'react-wavify'
 
 const Footer = () => {
   return <footer className="relative h-50 pt-15 " >
-    <Wave fill='#FF90BB' className='absolute -z-10 inset-x-0 bottom-0 h-50'
+    <Wave fill='#ec4899' className='absolute -z-10 inset-x-0 bottom-0 h-50'
       paused={false}
       style={{ display: 'flex' }}
       options={{
