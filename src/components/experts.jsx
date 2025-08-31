@@ -20,16 +20,16 @@ const Experts = () => {
             <div className="relative">
               <img
                 src="/doc.jpeg"
-                className="w-28 h-28 rounded-full border-4 border-cyan-800"
+                className="w-28 h-28 rounded-full border-4 border-main-accent"
                 alt="Dr. Subha Shrestha"
               />
-              <p className="absolute bottom-0 left-2 top-[89px] bg-cyan-800 rounded-lg text-white text-[10px] px-3 py-1">
+              <p className="absolute bottom-0 left-2 top-[89px] bg-main-accent rounded-lg text-white text-[10px] px-3 py-1">
                 NMC No: 6395
               </p>
             </div>
 
-            <h3 className="mt-5 text-2xl font-bold text-cyan-800">Dr. Subha Shrestha</h3>
-            <h5 className="text-cyan-800 mt-2 font-semibold">Fertility Expert</h5>
+            <h3 className="mt-5 text-2xl font-bold text-main-accent">Dr. Subha Shrestha</h3>
+            <h5 className="text-main-accent mt-2 font-semibold">Fertility Expert</h5>
             <p className="text-gray-600">Obstetrician & Gynecologist</p>
             <p className="text-gray-600">MD Obstetrics & Gynecology</p>
             <p className="text-gray-600">ART & IVF Fellowship Certified</p>
@@ -60,12 +60,11 @@ const Experts = () => {
           </div>
 
           <div className="mt-6 bg-gray-100 rounded-lg p-3 text-center">
-            <p className="font-semibold text-cyan-800">Currently Practicing</p>
+            <p className="font-semibold text-main-accent">Currently Practicing</p>
             <p className="text-sm text-gray-600">Bharatpur, Chitwan</p>
           </div>
 
           <div className="mt-6 flex flex-col gap-3">
-
             <NavLink
               to="/about"
               className={({ isActive }) =>
@@ -81,7 +80,7 @@ const Experts = () => {
               to="/"
               className={({ isActive }) =>
                 isActive
-                  ? "bg-cyan-800 text-main-background rounded-3xl py-2 font-semibold text-center"
+                  ? "bg-main-accent text-main-background rounded-3xl py-2 font-semibold text-center"
                   : "font-heading font-semibold text-main-black text-center"
               }
             >
