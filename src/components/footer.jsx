@@ -1,4 +1,3 @@
-import { NavLink } from 'react-router';
 import Wave from 'react-wavify'
 
 const Footer = () => {
@@ -22,27 +21,8 @@ const Footer = () => {
       </div>
       <div className='flex flex-col justify-center items-center gap-2' >
         <p className='font-heading font-semibold text-main-background text-xl ' >Quick links:</p>
-        <NavLink
-          to="/"
-          className={({ isActive }) =>
-            isActive
-              ? "font-heading font-extrabold text-white"
-              : "font-heading font-semibold text-main-background"
-          }
-        >
-          Home
-        </NavLink>
-        <NavLink
-          to="/about"
-          className={({ isActive }) =>
-            isActive
-              ? "font-heading font-extrabold text-white"
-              : "font-heading font-semibold text-main-background"
-          }
-        >
-          About
-        </NavLink>
-
+        <a className="font-heading font-extrabold text-white" href="/">Home</a>
+        <a className="font-heading font-extrabold text-white" href="/about">About</a>
       </div>
       <div className='flex flex-col justify-center items-center gap-2'>
         <p className='font-heading font-semibold text-main-background text-xl ' >Social:</p>

@@ -1,0 +1,19 @@
+---
+import "../styles/index.css"
+import Header from "../components/header.astro"
+import Form from "../components/form.jsx"
+import Map from "../components/map.jsx"
+import Footer from "../components/footer.jsx"
+import Experts from "../components/experts.astro"
+import Nav from "../components/nav.astro"
+---
+
+    <Header >
+      <Nav/>
+    </Header>
+    <main class="flex items-center flex-col " >
+      <Form client:load />
+      <Map client:only="react" />
+      <Experts />
+    </main>
+    <Footer client:idle />

@@ -1,8 +1,19 @@
-import { useWindowSize } from 'react-use'
 import Confetti from 'react-confetti'
-import { useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
 const Poopers = ({ setRun, run }) => {
+  function useWindowSize() {
+    const [size, setSize] = useState({ width: 0, height: 0 });
+
+    useEffect(() => {
+      const updateSize = () => setSize({ width: window.innerWidth, height: window.innerHeight });
+      updateSize();
+      window.addEventListener("resize", updateSize);
+      return () => window.removeEventListener("resize", updateSize);
+    }, []);
+
+    return size;
+  }
   const { width, height } = useWindowSize()
 
   useEffect(() => {
