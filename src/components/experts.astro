@@ -1,0 +1,107 @@
+---
+const currentPath = Astro.url.pathname;
+---
+
+    <section class="w-full" >
+      <div class="w-[70vw] m-auto flex flex-col justify-center items-center ">
+      <div class="text-center max-w-3xl mt-16">
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
+          Meet Your Fertility Specialist
+        </h2>
+        <p class="text-lg text-gray-600">
+          Dr. Subha Shrestha brings over a decade of expertise in reproductive health, helping couples overcome infertility challenges with compassion and advanced medical care.
+        </p>
+      </div>
+
+      <div class="mt-12 mb-16 flex flex-col md:flex-row items-center md:items-start gap-8 w-full max-w-6xl">
+
+
+        <div class="bg-white shadow-md rounded-2xl w-full p-6">
+          <div class="flex flex-col items-center">
+            <div class="relative">
+              <img
+                src="/doc.jpeg"
+                class="w-28 h-28 rounded-full border-4 border-main-accent"
+                alt="Dr. Subha Shrestha"
+              />
+              <p class="absolute bottom-0 left-2 top-[89px] bg-main-accent rounded-lg text-white text-[10px] px-3 py-1">
+                NMC No: 6395
+              </p>
+            </div>
+
+            <h3 class="mt-5 text-2xl font-bold text-main-accent">Dr. Subha Shrestha</h3>
+            <h5 class="text-main-accent mt-2 font-semibold">Fertility Expert</h5>
+            <p class="text-gray-600">Obstetrician & Gynecologist</p>
+            <p class="text-gray-600">MD Obstetrics & Gynecology</p>
+            <p class="text-gray-600">ART & IVF Fellowship Certified</p>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4 mt-6">
+            <div class="bg-gray-50 p-3 rounded-lg text-center">
+              <img src="/graduation.png" class="w-6 h-6 mx-auto mb-2" alt="" />
+              <h4 class="font-semibold">MBBS, MD</h4>
+              <p class="text-sm text-gray-500">Kathmandu University</p>
+            </div>
+            <div class="bg-gray-50 p-3 rounded-lg text-center">
+              <img src="/badge.png" class="w-6 h-6 mx-auto mb-2" alt="" />
+              <h4 class="font-semibold">Gold Medal</h4>
+              <p class="text-sm text-gray-500">Excellence Award 2013</p>
+            </div>
+            <div class="bg-gray-50 p-3 rounded-lg text-center">
+              <img src="/like.png" class="w-6 h-6 mx-auto mb-2" alt="" />
+              <h4 class="font-semibold">IVF Fellowship</h4>
+              <p class="text-sm text-gray-500">Indira IVF, India</p>
+            </div>
+
+            <div class="bg-gray-50 p-3 rounded-lg text-center">
+              <img src="/user.png" class="w-6 h-6 mx-auto mb-2" alt="" />
+              <h4 class="font-semibold">10+ Years</h4>
+              <p class="text-sm text-gray-500">Clinical Experience</p>
+            </div>
+          </div>
+
+          <div class="mt-6 bg-gray-100 rounded-lg p-3 text-center">
+            <p class="font-semibold text-main-accent">Currently Practicing</p>
+            <p class="text-sm text-gray-600">Bharatpur, Chitwan</p>
+          </div>
+
+          <div class="mt-6 flex flex-col gap-3">
+            <a class={`font-heading rounded-3xl font-semibold text-center ${ currentPath==="/about" ? "bg-main-accent py-2 text-main-background " : " text-main-black " } `} href="/about">Learn More About Dr.Subha</a>
+            <a class={`font-heading rounded-3xl font-semibold text-center ${ currentPath==="/" ? "bg-main-accent py-2 text-main-background " : " text-main-black " } `} href="/">Book Consultation</a>
+          </div>
+        </div>
+
+        <div class="bg-white shadow-md rounded-2xl p-6">
+          <h2 class="text-xl font-bold text-gray-800 mb-4">Why Choose Dr. Subha Shrestha?</h2>
+          <ul class="space-y-3 text-gray-700">
+            <li class="flex items-start gap-2">
+              <img src="/checked.png" class="w-5 h-5 mt-1" alt="check" />
+              <span>Nepal Medical Council Registered Specialist</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <img src="/checked.png" class="w-5 h-5 mt-1" alt="check" />
+              <span>NESOG Logic Gold Medal Winner (2013)</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <img src="/checked.png" class="w-5 h-5 mt-1" alt="check" />
+              <span>Certified IVF Fellowship from Indira IVF, India</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <img src="/checked.png" class="w-5 h-5 mt-1" alt="check" />
+              <span>Over 10 years of clinical experience</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <img src="/checked.png" class="w-5 h-5 mt-1" alt="check" />
+              <span>Advanced training in reproductive health</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <img src="/checked.png" class="w-5 h-5 mt-1" alt="check" />
+              <span>Compassionate, ethical practice approach</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      </div>
+    </section>
+

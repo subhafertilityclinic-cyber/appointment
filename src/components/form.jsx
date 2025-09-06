@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import emailjs from "@emailjs/react-native"
+import emailjs from "@emailjs/browser"
 import Poopers from "./poopers";
 import { getDay } from 'date-fns';
 
@@ -34,7 +34,10 @@ const Form = () => {
     }
     if (passed) {
       mail()
-    } else setMessage("Please fill up the form correctly")
+    } else {
+      console.log(message)
+      setMessage("Please fill up the form correctly")
+    }
   }
 
   let templateParams = {
@@ -45,9 +48,9 @@ const Form = () => {
   }
 
   function mail() {
-    const serviceid = import.meta.env.VITE_SERVICE_ID
-    const templateid = import.meta.env.VITE_TEMPLATE_ID
-    const publickey = import.meta.env.VITE_PUBLIC_KEY
+    const serviceid = import.meta.env.PUBLIC_SERVICE_ID
+    const templateid = import.meta.env.PUBLIC_TEMPLATE_ID
+    const publickey = import.meta.env.PUBLIC_PUBLIC_KEY
 
     emailjs
       .send(serviceid, templateid, templateParams, {
@@ -101,7 +104,7 @@ const Form = () => {
   return <section className=" w-full mt-6 px-6 flex justify-center " >
     <div className="grid grid-cols-1 px-2 w-full  md:w-[70vw] md:grid-cols-4 md:gap-4 md:px-9 py-6 flex-col items-center bg-white shadow-md rounded-2xl">
       <h3 className=" md:col-span-4  self-start font-heading font-bold text-lg text-main-black md:text-center md:text-3xl " >Book Appointment:</h3>
-      <div className=" md:col-span4 h-4 w-full flex justify-center items-center md:text-2xl md:h-6 " >
+      <div className=" md:col-span-4 h-4 w-full flex justify-center items-center md:text-2xl md:h-6 " >
         {messageVisible ?
           <strong className="h-2 md:col-span-2 md:h-6" >{message}</strong>
           : null

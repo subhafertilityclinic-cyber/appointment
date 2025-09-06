@@ -1,0 +1,14 @@
+---
+import "../styles/index.css"
+import Header from "../components/header.astro"
+import Footer from "../components/footer.jsx"
+import Experts from "../components/experts.astro"
+import Experts2 from "../components/experts2.astro"
+---
+
+    <Header/>
+    <main class="flex flex-col justify-center items-center" >
+      <Experts />
+      <Experts2/>
+    </main>
+    <Footer client:idle />
