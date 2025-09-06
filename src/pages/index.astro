@@ -1,19 +1,18 @@
 ---
-import "../styles/index.css"
-import Header from "../components/header.astro"
+import Layout from "../layouts/Layout.astro"
 import Form from "../components/form.jsx"
 import Map from "../components/map.jsx"
-import Footer from "../components/footer.jsx"
 import Experts from "../components/experts.astro"
-import Nav from "../components/nav.astro"
 ---
-
-    <Header >
-      <Nav/>
-    </Header>
+<Layout 
+  title="Subha Fertility - HOME"
+  description="Subha Fertility Clinic in Bharatpur, Chitwan, offers expert IVF and fertility treatments with experienced specialists, personalized care, and advanced technology to help families achieve their dream of parenthood."
+  image="https://appointment-c2h.pages.dev/logo.png"
+  url="https://appointment-c2h.pages.dev/logo.png"
+>
     <main class="flex items-center flex-col " >
       <Form client:load />
       <Map client:only="react" />
       <Experts />
     </main>
-    <Footer client:idle />
+</Layout>
