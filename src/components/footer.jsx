@@ -15,8 +15,9 @@ const Footer = () => {
       <div className='flex flex-col justify-center items-center gap-2'>
         <p className='font-heading font-semibold text-main-background text-xl ' >Contact us:</p>
         <div className='flex gap-2 flex-col ' >
-          <a href="mailto:subhafertilityclinic@gmail.com" target='_blank' className='font-heading text-main-background font-semibold ' >Mail</a>
-          <p className='font-heading font-semibold text-main-background' >9855074117</p>
+          <a href="mailto:subhafertilityclinic@gmail.com" target='_blank' className='hidden md:block font-heading text-main-background font-semibold ' >Mail: subhafertilityclinic@gmail.com</a>
+          <a href="mailto:subhafertilityclinic@gmail.com" target='_blank' className='block md:hidden font-heading text-main-background font-semibold ' >Mail</a>
+          <p className='font-heading font-semibold text-main-background' >Ph: 9855074117</p>
         </div>
       </div>
       <div className='flex flex-col justify-center items-center gap-2' >
@@ -27,9 +28,9 @@ const Footer = () => {
       <div className='flex flex-col justify-center items-center gap-2'>
         <p className='font-heading font-semibold text-main-background text-xl ' >Social:</p>
         <div className='flex gap-2' >
-          <a href="https://facebook.com/sumitpdl" target='_blank' rel="noopener noreferrer" ><img className='h-6 w-6' src="/facebook.svg" alt="" /></a>
-          <a href="https://instagram.com/goku_chann_" target='_blank' rel="noopener noreferrer"><img className='h-6 w-6' src="/instagram.svg" alt="" /></a>
-          <a href="https://instagram.com/goku_chann_" target='_blank' rel="noopener noreferrer"><img className='h-6 w-6' src="/tiktok.svg" alt="" /></a>
+          <a href="https://facebook.com/subhafertilityclinic" target='_blank' rel="noopener noreferrer" ><img className='h-6 w-6' src="/facebook.svg" alt="" /></a>
+          <a href="https://instagram.com/subhafertility" target='_blank' rel="noopener noreferrer"><img className='h-6 w-6' src="/instagram.svg" alt="" /></a>
+          <a href="https://tiktok.com/@subhafertilityclinic" target='_blank' rel="noopener noreferrer"><img className='h-6 w-6' src="/tiktok.svg" alt="" /></a>
         </div>
       </div>
     </div>
