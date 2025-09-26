@@ -10,6 +10,7 @@ import sitemap from "@astrojs/sitemap";
 export default defineConfig({
   trailingSlash: "never",
   site: "https://subhafertility.org.np",
+  output: "static",
   vite: {
     plugins: [tailwindcss()],
   },
