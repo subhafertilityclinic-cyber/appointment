@@ -3,6 +3,7 @@ import "../styles/index.css"
 import Header from "../components/header.astro";
 import Footer from "../components/footer";
 import Nav from "../components/nav.astro";
+
 interface Props {
   title: string
   description: string
@@ -12,44 +13,49 @@ interface Props {
 
 const { title, description, image, url } = Astro.props
 ---
+
 <!doctype html>
 <html lang="en">
-	<head>
-    <link rel="sitemap" href="/sitemap-index.xml" />
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/logo.png" />
-		<meta name="generator" content={Astro.generator} />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <meta name="generator" content={Astro.generator} />
+
     <title>{title}</title>
-	<meta name="description" content={description} />"
+    <meta name="description" content={description} />
+
+    <!-- Canonical -->
+    <link rel="canonical" href={url} />
+
+    <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={image} />
     <meta property="og:url" content={url} />
-     <!-- twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-		<meta property="twitter:domain" content="subhafertility.org.np" />
-		<meta property="twitter:url" content={url} />
-		<meta name="twitter:title" content={title} />
-		<meta name="twitter:description" content={description} />
-		<meta name="twitter:image" content={image} />
 
-	</head>
-	<body >
-    <Header >
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="subhafertility.org.np" />
+    <meta property="twitter:url" content={url} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+  </head>
+  <body>
+    <Header>
       <Nav />
     </Header>
-		<slot />
+    <slot />
     <Footer client:idle />
-	</body>
+  </body>
 </html>
 
 <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+  html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
 </style>
